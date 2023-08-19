@@ -30,7 +30,7 @@
 #define STL_CRC32_VERSION "1.0.0"
 
 
-uint16_t stk_crc16(const char *buf, int len);
+uint16_t stl_crc16(const char *buf, int len);
 
 /**
  * Call once globally.
