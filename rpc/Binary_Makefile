@@ -1,0 +1,11 @@
+all:
+	gcc -g -DRPC_SERVER   -O0 -L ../stl rpc_utils.h rpc_utils.c rpc_tcp_utils.h rpc_tcp_utils.c ../stl/stl.h \
+	rpc_body.h rpc_body.c rpc_tcp_protocol.h 	rpc_tcp_protocol.c \
+	rpc_server.h rpc_server.c   -o test_server -luct -lucp -lucs -lucm -pthread -lstl
+
+	gcc -g -DRPC_CLIENT   -O0  -L ../stl rpc_utils.h rpc_utils.c rpc_tcp_utils.h rpc_tcp_utils.c \
+	rpc_body.h rpc_body.c rpc_tcp_protocol.h 	rpc_tcp_protocol.c \
+	../stl/stl.h  rpc_client.h rpc_client.c   -o test_client -luct -lucp -lucs -lucm -pthread -lstl
+
+clean:
+	rm -rf  test*
