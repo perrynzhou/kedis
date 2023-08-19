@@ -1,142 +1,40 @@
-<p align="center"><img width="210" src="https://github.com/Water-Melon/Melon/blob/master/docs/logo.png?raw=true" alt="Melon logo"></p>
-<p align="center"><img src="https://img.shields.io/github/license/Water-Melon/Melang" /></p>
-<h1 align="center">Melon</h1>
+##  stl(基础通用库)
+### 介绍
 
+- 基本数据结构的实现，大部分代码从开源仓库拉取并且定制修改，涵盖了大部分的基础数据结构的实现
 
-
-**[中文说明](http://doc.melonc.io/cn/)**
-
-Melon is a generic cross-platform C library. It contains many algorithms, data structures, functional components, scripting languages and practical frameworks, which can facilitate developers to quickly develop applications and avoid the dilemma of repeated wheel building.
-
-- Components
-  - Library Initialization
-  - Configuration
-  - Log
-  - Error Code Management
-  - Memory Pool
-  - Thread Pool
-  - I/O Thread
-  - TCP Encapsulation
-  - Event Mechanism
-  - File Set
-  - HTTP Handling
-  - Scripting Language
-  - Lexical Analyzer
-  - Parser Generator
-  - Websocket
-  - String
-  - Regular Expression
-  - Big Number Calculation
-  - FEC
-  - JSON
-  - Matrix Operations
-  - Reed Solomon Coding
-  - Cron Format Parser
-  - Spin Lock
-  - Prime Generator
-- Data Structures
-  - Doubly Linked List
-  - Fibonacci Heap
-  - Hash Table
-  - Queue
-  - Red-black Tree
-  - Stack
-  - Array
-- Algorithms
-  - AES
-  - DES/3DES
-  - RC4
-  - RSA
-  - MD5
-  - SHA
-  - Base64
-- Scripting Language Development
-- Frameworks
-  - Multi-Process Model
-  - Multi-Thread Model
-  - Trace Mode
-  - IPC
-
-
-
-### Platform Support
-
-Melon was originally written for UNIX systems, so it is suitable for UNIX-like systems such as Linux and MacOS. And there are a few optimizations for Intel CPUs.
-
-At present, Melon has also completed the preliminary porting to Windows, so it can be used on Windows. However, because Windows differs greatly from the UNIX system in the creation process, some functions of the above `framework` are temporarily not supported in Windows.
-
-
-
-### Installation
-
-On Windows, please install `mingw`, `git bash` and `make` at first. Install [MingW-W64-builds](https://www.mingw-w64.org/downloads/#mingw-builds) with the installation settings:
-
-- `Version`: `8.1.0`
-
-- `Architecture`: `i686`
-
-- `Threads`: `posix`
-
-- `Exception`: `dwarf`
-
-- `Build revision`: `0`
-
-Then execute these shell commands on git bash or terminal (on UNIX).
-
-```
-git clone https://github.com/Water-Melon/Melon.git
-cd Melon
-./configure [--prefix=LIB_INSTALL_PATH]
-make
-make install
-```
-
-
-
-### License
-
-[BSD-3-Clause License](https://github.com/Water-Melon/Melang/blob/master/LICENSE)
-
-Copyright (c) 2014-present, Niklaus F. Schen
-
-
-
-### Documentation
-
-Please refer to [Official Documentation Website](http://doc.melonc.io/) for more details.
-
-中文文档请参考：[中文指南](http://doc.melonc.io/cn/)
-
-
-
-### Docker
-
-You can pull the built container image to deploy the running environment.
-
-**Docker image will not be maintained temporarily because I cannot sign in docker hub from my country.** 
+### 编译
 
 ```shell
-docker pull melonc/melon
+$ cmake .
+$ make 
 ```
 
+### 数据结构列表
 
-
-### Webassembly
-
-You should install `emsdk` at first, make sure `emcc` and `emar` have been installed. Then execute:
-
-```shell
-./configure --enable-wasm
-make && make install
-```
-
-There is only one static library `libmelon.a` to be created.
-
-
-
-### Contact
-
-Twitter: @MelangInc
-
-QQ: 756582294
-
+| Library                        | Description                                                                                |
+|--------------------------------|--------------------------------------------------------------------------------------------|
+| **[stl_array](stl_array)**             | 通用的vector/array动态数组实现                                                                      |
+| **[stl_ringbuffer](stl_buffer)**           | ringbuffer实现|
+| **[stl_condition](stl_condition)**     | Condition封装                                                   |
+| **[stl_crc](stl_crc)**             | Crc算法实现                                           |
+| **[stl_heap](stl_heap)**               | 最大/最小堆实现                              | 
+| **[stl_ini](stl_ini)**                 | Ini配置文件解析                                                                               |
+| **[stl_list](stl_list)** | 链表实现                                                                    |
+| **[stl_log](stl_logger)**           | 日志实现                                                                                   |
+| **[stl_map](stl_map)**                 | map实现                                                |
+| **[stl_mmap](stl_mmap)**   | mmap的实现                                                         |
+| **[stl_option](stl_option)**           | 命令行参数解析实现                                                   |
+| **[stl_perf](stl_perf)**               | perf性能检测库                 | 
+| **[stl_queue](stl_queue)**             | 队列的实现                           |
+| **[stl_signal](stl_signal)**           | 信号量的实现  |
+| **[stl_str](stl_string)**           | 变长字符串实现                                             |
+| **[stl_thread](stl_thread)**           | 线程封装                                                   |
+| **[stl_time](stl_time)**               | 时间函数                                            |
+| **[stl_timer](stl_timer)**             | 定时器的实现                         |
+| **[stl_uri](stl_uri)**                 | uri的解析库实现                                                                       |
+| **[stl_md5](stl_md5)**                 | md5算法实现                                                                       |
+| **[stl_dict](stl_dict)**                 | dict实现                                                                        |
+| **[stl_base64](stl_base64)**                 | base64编码解码实现                                                                        |
+| **[stl_hash](stl_hash)**                 | hash函数库                                                                        |
+| **[stl_rand](stl_rand)**                 | 随机函数库                                                                 |
